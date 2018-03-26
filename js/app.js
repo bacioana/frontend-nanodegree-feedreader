@@ -23,6 +23,7 @@ var allFeeds = [
     }
 ];
 
+
 /* This function starts up our application. The Google Feed
  * Reader API is loaded asynchonously and will then call this
  * function when the API is loaded.
@@ -127,7 +128,15 @@ $(function() {
     /* When the menu icon is clicked on, we need to toggle a class
      * on the body to perform the hiding/showing of our menu.
      */
+     
     menuIcon.on('click', function() {
-        $('body').toggleClass('menu-hidden');
-    });
+        $('body').toggleClass('menu-hidden');        
+      });
 }());
+
+const body=document.querySelector('body');
+const menuIcon=document.querySelector('.menu-icon-link');
+const feedContainer=document.querySelector('.feed');
+
+
+
