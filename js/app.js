@@ -133,10 +133,3 @@ $(function() {
         $('body').toggleClass('menu-hidden');        
       });
 }());
-
-const body=document.querySelector('body');
-const menuIcon=document.querySelector('.menu-icon-link');
-const feedContainer=document.querySelector('.feed');
-
-
-
