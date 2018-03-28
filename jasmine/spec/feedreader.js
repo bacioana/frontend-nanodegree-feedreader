@@ -93,6 +93,7 @@ $(function() {
          it('should have at least a single .entry element', function (done) {
             var children=$('.feed .entry');
             expect(children).toBeDefined();
+            expect(children.length).not.toBe(0);
             done();
          });
     });
@@ -106,12 +107,13 @@ $(function() {
         beforeEach(function(done){                     
             loadFeed(2,function(){
                 before=feedContainer.innerHTML;
-                done();
+                loadFeed(1,function(){
+                    after=feedContainer.innerHTML;
+                    done();
+                });
+                
             });
-            loadFeed(1,function(){
-                after=feedContainer.innerHTML;
-                done();
-            });
+            
         });
         it('should change the content of the feed', function(done) {
             expect(before).not.toBe(after);
